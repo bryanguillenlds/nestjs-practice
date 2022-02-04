@@ -14,11 +14,14 @@ export class MessagesController {
 		//THIS IS NOT THE RIGHT WAY
 		this.messagesService = new MessagesService();
 	}
+
+	//Get Decorator
 	@Get()
 	listMessages() {
 		return this.messagesService.findAll();
 	}
 
+	//Get Decorator
 	@Get('/:id')
 	async getMessage(
 		@Param('id') id: string
@@ -30,6 +33,7 @@ export class MessagesController {
 		return message;
 	}
 
+	//Post Decorator
 	@Post()
 	createMessage(
 		@Body() body: CreateMessageDto
