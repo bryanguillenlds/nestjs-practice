@@ -4,15 +4,12 @@ import { MessagesService } from './messages.service';
 
 //Contorller contains the first part of the req route to simplify
 //following reqs
-@Controller('/messages')
+@Controller('messages')
 export class MessagesController {
-	//define the type of the service instance
-	messagesService: MessagesService
-
-	constructor() {
-		//assign instance of service (creating own dependency on Service.)
-		//THIS IS NOT THE RIGHT WAY
-		this.messagesService = new MessagesService();
+	//This is equivalent to defining repo and assigning
+	//inside the constructor. We just pass it as a public arg
+	//with typescript syntatic sugar.(automatically assign as props to the class)
+	constructor(public messagesService: MessagesService) {
 	}
 
 	//Get Decorator

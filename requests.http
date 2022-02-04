@@ -6,8 +6,8 @@ POST http://localhost:3000/messages
 content-type: application/json
 
 {
-	"content": "Hi There"
+	"content": "New Message After DI"
 }
 
 ### Get a particular Message
-GET http://localhost:3000/messages/12
+GET http://localhost:3000/messages/576

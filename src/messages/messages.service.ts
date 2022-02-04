@@ -1,13 +1,13 @@
 import { MessagesRepository } from "./messages.repository";
+import { Injectable } from "@nestjs/common";
 
+@Injectable()
 export class MessagesService {
-	//define the type of the repo
-	messagesRepo: MessagesRepository;
+	//This is equivalent to defining repo and assigning
+	//inside the constructor. We just pass it as a public arg
+	//with typescript syntatic sugar.(automatically assign as props to the class)
+	constructor(public messagesRepo: MessagesRepository){
 
-	constructor() {
-		//assign repo (creating own dependency on MessagesRepo.)
-		//THIS IS NOT THE RIGHT WAY
-		this.messagesRepo = new MessagesRepository();
 	}
 
 	findOne(id: string) {
